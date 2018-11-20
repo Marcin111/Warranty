@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--dwa linki z bootstrapa i z fontawesome z cdn-->
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+          integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <div class="row">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/addreport">Add Report<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/reports">View Reports<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/addwarranty">Add Warranty<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/warranties">View Warranties<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <h2>List of existing reports:</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <table class="table table-light table-striped">
+            <thead class="thead-dark">
+            <tr align="center">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Brand</th>
+                <th>Purchased</th>
+                <th>Invoice ID</th>
+                <th>Problem statement</th>
+                <th>Status</th>
+                <th>Last Update</th>
+                <th>Report added</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="report:${reports}" align="center">
+                <td th:text="${report.reportId}"></td>
+                <td th:text="${report.reportName}"></td>
+                <td th:text="${report.reportType}"></td>
+                <td th:text="${report.reportBrand}"></td>
+                <td th:text="${report.reportPurchased}"></td>
+                <td th:text="${report.reportInvoiceId}"></td>
+                <td th:text="${report.reportProblem}"></td>
+                <td th:text="${report.reportStatus}"></td>
+                <td th:text="${report.reportUpdate}"></td>
+                <td th:text="${report.reportAdded}"></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--dwa linki żeby po zmniejszeniu działało meny-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" th:src="@{/main.js}"></script>
+
+
+</body>
+
+<style>
+    th {
+        font-size: larger;
+    }
+</style>
+</html>

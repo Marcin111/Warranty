@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--dwa linki z bootstrapa i z fontawesome z cdn-->
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <div class="row">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/addreport">Add Report<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/reports">View Reports<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/addwarranty">Add Warranty<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/warranties">View Warranties<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <h1 class="text-center retroshadow">Warranty Management Services</h1>
+</header>
+
+<div class="container">
+
+    <div class="flex">
+
+        <div class="flex-child">
+            <p class="font-weight-bold text-center">Reporting Service</p>
+            Simple solution which allows you to quickly report an issue with any equipment purchased directly from manufacturer. The idea is to use straightforward form to gather all necessary information about the product, its owner and the encountered problem into a database and make the whole process of solving the problem brief and convenient.
+            <br>
+            In case of any problems feel free to add a new report by clicking <a href="/addreport">here</a> and filling all fields necessary. You can always view all added reports at any moment <a href="/reports">here</a> or by using the task bar above.</div>
+    </div>
+
+    <div class="flex">
+        <div class="flex-child">
+            <p class="font-weight-bold text-center">Warranty Management</p>
+            Simple service which allows you to quickly add and manage your existing warranties. In case of any problems with purchased equipment you may quickly access Warranty Management and check if warranty period for given product is not expired so you may report an issue. It also allows you to keep track of all the invoices and their location in case you forgot where they are.
+            <br>
+            You can simply add new warranties <a href="/addwarranty">here</a> and if you would like to quickly review all existing warranties use <a href="/warranties">View Warrenties</a>.</div>
+    </div>
+
+</div>
+
+<!--dwa linki żeby po zmniejszeniu działało meny-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" th:src="@{/main.js}"></script>
+
+
+</body>
+</html>

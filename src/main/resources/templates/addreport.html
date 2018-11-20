@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--dwa linki z bootstrapa i z fontawesome z cdn-->
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <div class="row">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/addreport">Add Report<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/reports">View Reports<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/addwarranty">Add Warranty<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/warranties">View Warranties<span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <header>
+            <h2 class="text-center">Report a problem:</h2>
+        </header>
+
+    </div>
+    <div class="row">
+
+        <form th:action="@{/addreport}" method="post">
+            <div class="form-group">
+                <label>Product identification name: </label>
+
+                <input type="text" th:name="reportName" class="form-control" placeholder="owners name" required>
+
+            </div>
+            <div class="form-group">
+                <label> Product type: </label>
+
+                <input type="text" th:name="reportType" class="form-control" placeholder="type" required>
+            </div>
+
+            <div class="form-group">
+                <label> Product brand: </label>
+
+                <input type="text" th:name="reportBrand" class="form-control" placeholder="brand" required>
+            </div>
+
+            <div class="form-group">
+                <label> Date of purchase: </label>
+
+                <input type="text" th:name="reportPurchased" class="form-control" placeholder="YYYY-MM-DD" required>
+            </div>
+
+            <div class="form-group">
+                <label> Invoice ID number: </label>
+
+                <input type="text" th:name="reportInvoiceId" class="form-control" placeholder="XXX-XXX-XXX" required>
+            </div>
+
+            <div class="form-group">
+                <label> Description of a problem: </label>
+
+                <input type="text" th:name="reportProblem" class="form-control" required>
+            </div>
+
+            <input type="submit" value="Add">
+
+        </form>
+    </div>
+</div>
+
+<!--dwa linki żeby po zmniejszeniu działało meny-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+
+<script type="text/javascript" th:src="@{/main.js}"></script>
+
+
+
+</body>
+</html>
